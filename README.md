@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Loan Calculator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, single-page web application built with React and Material UI for calculating loan EMIs and viewing exchange rates.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Loan EMI calculation using standard financial formulas
+- Dynamic amortization schedule with monthly breakdown
+- Real-time currency conversion using live exchange rates
+- Dark/Light mode toggle
+- Responsive design with mobile-friendly navigation
+- Error handling and 404 page
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Exchange Rate API key from [ExchangeRate-API](https://www.exchangerate-api.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Setup
 
-### `npm test`
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd loan-system
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run build`
+3. Create a `.env` file in the root directory and add your Exchange Rate API key:
+```
+REACT_APP_EXCHANGE_RATE_API_KEY=your_api_key_here
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Start the development server:
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The application will be available at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. **EMI Calculator**
+   - Enter the loan amount
+   - Specify the interest rate
+   - Set the loan term in years
+   - View the calculated EMI and amortization schedule
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Exchange Rates**
+   - View current exchange rates for 160+ currencies
+   - Use pagination to navigate through the rates table
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React (Hooks, Context API, Routing)
+- TypeScript
+- Material UI
+- Axios for API calls
+- Exchange Rate API for currency conversion
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Error Handling
 
-## Learn More
+The application includes:
+- Runtime error handling with a dedicated error page
+- 404 Not Found page for unmatched routes
+- Graceful fallbacks for API failures
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

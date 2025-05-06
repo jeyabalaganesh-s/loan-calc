@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from './context/ThemeContext';
+import { Navigation } from './components/Navigation';
+import { EMICalculator } from './components/EMICalculator';
+import { ExchangeRateTable } from './components/ExchangeRateTable';
+import { ErrorPage } from './pages/ErrorPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <CssBaseline />
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<EMICalculator />} />
+          <Route path="/exchange-rates" element={<ExchangeRateTable />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
