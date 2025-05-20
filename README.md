@@ -1,4 +1,4 @@
-# Loan Calculator App
+# emi calculator
 
 A modern, single-page web application built with React and Material UI for calculating loan EMIs and viewing exchange rates.
 
